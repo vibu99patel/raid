@@ -3,6 +3,7 @@
 #include <string.h>
 #include <errno.h>
 
+
 #define MAX_DISKS 32
 #define MAX_BLOCK_SIZE 4096
 
@@ -18,7 +19,7 @@ int hex_char_to_value(char c) {
 void hex_string_to_bytes(const char *hex, unsigned char *bytes, int byte_count) {
     for (int i = 0; i < byte_count; i++) {
         int high = hex_char_to_value(hex[2 * i]);
-        int low = hex_char_to_value(hex[2 * i + 1]);
+        int low = hex_char_to_value(hex[2 * i + 1]); 
         bytes[i] = (high << 4) | low;
     }
 }
